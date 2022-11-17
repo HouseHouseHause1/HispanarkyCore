@@ -1,0 +1,277 @@
+# Made by MrRafter
+# Plugin Made For Hispanarky
+# If you have any problems please contact me through discord: MrRafter_#4660
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#           Commands
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# COMMAND WHITELIST
+CommandWhitelist: false
+AllowOPStobypass: true
+CommandsWhitelisted:
+  - /msg
+  - /message
+  - /r
+  - /reply
+  - /w
+  - /whisper
+  - /tell
+
+
+help:
+  - "&7---------------------------------------------"
+  - "&3/kill - die"
+  - "&3/w - whisper"
+  - "&3/r - reply"
+  - "&3/togglechat - Toggle chat messages."
+  - "&3/toggledeathmsg - Toggle all death messages."
+  - "&3/toggletells - Toggle direct messages."
+  - "&3/ignore - Ignore a players messages"
+  - "&3/stats - World size and amount of players that joined."
+  - "&3/tps - TPS of server."
+  - "&7---------------------------------------------"
+
+# enable /kill command
+killcommand: true
+
+#Manage MOTD messages (not in-game MOTD)
+motd:
+  enabled: true
+  #A MOTD will be displayed randomly
+  motd-list:
+    - "Motd Test\nNumber 1"
+    - "Motd Test\nNumber 2"
+    - "Motd Test\nNumber 3"
+    - "Motd Test\nNumber 4"
+    - "Motd Test\nNumber 5"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#           Messages
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+
+PreventSpam: true
+# Global limit
+AntiSpamTime: 2 # 1 message per second
+# How many messages should we allow to send in x seconds (converted to ticks)
+AntiSpamCheckTime: 30
+AntiSpamMessagesPerTime: 10 # ~1 message every 3 seconds if constantly spamming
+AntiSpamWordTime: 60
+AntiSpamLinkTime: 300
+CharacterLimit: 128
+PreventUnicodeDot: true
+MoreLenientLinkCheck: true # Won't get triggered by just the word discord and dc
+AllowLinksForOP: true
+
+
+#Messages Baned
+BannedWords:
+  - "what's 2+2"
+
+BannedRegex:
+  - "^This is a(.*)banned message" # Prevents any message that starts with "This is a" and ends with "banned message"
+
+LinkRegex:
+  - "(https?://(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?://(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})"
+  - "[-a-zA-Z0-9@:%._+~#=]{1,256}\\.[a-zA-Z()]{1,6}\\b([-a-zA-Z()@:%_+.~#?&/=]*)"
+
+join-messages:
+  enabled: true
+  join: "&7%player% &7joined the game"
+  leave: "&7%player% &7left the game"
+  FirstJoinMessage: "&f&l[&4PRECAUCIÒN&f&l] &7%player% &6Has entrado por primera vez a &4&lHispanarky" # %players_num% is how many players have joined the server + the current one (ex. 351th)
+
+# /say %message%
+Say:
+  Format: "&6&l[&c&lHispanarky&6&l]:&e&l%message%"
+
+# /Vanish
+joinmessage: "&7%player% &7joined the game"
+quitmessage: "&7%player% &7left the game"
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#            Patches
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+RandomSpawn:
+  Enabled: true #Enable this module
+  #The max range to spawn the player
+  Range: 800
+  #World name to spawn the player in
+  World: 'world'
+  #Blocks to not spawn the player on
+  Blocks:
+    - 'STATIONARY_LAVA'
+    - 'water'
+    - 'lava'
+    - 'air'
+    - 'cactus'
+
+
+#AntiTraps
+PatchPortalTraps: false
+AntiBedTrap: false
+AntiBedTrapDeathAmount: 2
+
+#Book
+AntiBookBan: true
+MaxByteSize: 140
+
+#BowBomb
+AntiBowBomb: true
+MaxBowSquared: 15
+
+#Burrow
+AntiBurrow: true
+BurrowDamageWhenMoving: 1
+TeleportBurrow: true
+PreventBurrowIfBlockAbove: false
+BreakAnvilInsteadOfTeleport: true
+AllowSlabsInBurrow: true
+
+#Invalid Patch
+GodModePatch: true
+PatchCommandSign: true
+PatchInvalidNames: true
+
+#Prevent Lag Exploits
+PreventCraftingRecipeLagExploit: true
+CraftingRecipeDelay: 5 # in ticks
+
+leverspam:
+  #Should we patch lever spam?
+  #How many times per second can a player spam a lever
+  #Message we should send when a player spams a lever (applies for kick)
+  #Should we kick players for spamming levers?
+  enabled: true
+  interval: 8
+  message: '&6Please dont spam levers!'
+  kick: true
+
+AntiGravity:
+  #Should we stop liquid from flowing at a certain tps?
+  #Tps to stop liquid from flowing at
+  enabled: true
+  disabletps: 18
+
+explosions:
+  #Should we disable TNT?
+  #Should we disable tnt at a certain tps?
+  #Tps to disable tnt at
+  enabed: true
+  disableattps: true
+  tps: 17
+
+
+#Patches Coordinate Exploit
+#IT IS NOT RECOMMENDED TO TOUCH THIS FOR SAFETY
+NoComPatch: true
+AntiCoordExploitTeleport: true
+VanishTimeTeleport: 10
+MinDistanceToVanishPlayer: 100
+
+#Crash Patch
+PatchEndGatewayCrashExploit: true
+PatchDispenserCrashExploit: true
+PatchMultipleEnderDragons: true
+
+#withers
+DisableWithers: false
+RemoveWitherHeadsAutomatically: false
+RemoveWitherHeadsAutomaticallyTicks: 93
+RemoveAllWitherSkulls: false
+
+#Dupe Patch
+DisableChestsOnDonkeys: false
+# Donkeys can't go through portals?
+DonkeysFromGoingThroughPortalsPatch: true
+# pathc for item duplication with donkeys in end portals: https://www.youtube.com/watch?v=n-fN6txZNgc
+EndPortalDupePatch: true
+
+#Portals
+# Fireworks should not pass through portals?
+PatchFireworksInPortals: true
+# items must not pass through portals?
+PatchDropppedItemsInPortals: true
+# mobs should not pass through portals?
+PatchAllEntitiesInPortals: true
+ProjectilesMaxPerTime: 2
+ProjectileTimeTicks: 6
+DestroyingEndPortalsPatch: true
+
+#What events should we listen to?
+AntiIllegal:
+  Block-Place-Enabled: true
+  ChunkLoad-Enabled: false
+  HopperTransfer-Enabled: true
+  InventoryClose-Enabled: true
+  InventoryOpen-Enabled: true
+  PlayerHotbarMove-Enabled: true
+  ItemPickup: true
+  RevertStackedItems: true
+  #What items are illegal?
+  Illegal-Items-List:
+    - "BEDROCK"
+    - "COMMAND_REPEATING"
+    - "COMMAND_MINECART"
+    - "COMMAND_CHAIN"
+    - "COMMAND"
+    - "ENDER_PORTAL_FRAME"
+    - "KNOWLEDGE_BOOK"
+    - "MOB_SPAWNER"
+    - "PORTAL"
+    - "STRUCTURE_BLOCK"
+    - "STRUCTURE_VOID"
+
+#Messages to send the player when they try to place illegal blocks
+IllegalBlock-Place:
+  Enabled: true
+  Bedrock: '&6That block is not allowed'
+  Barrier: '&6That block is not allowed'
+  End_Portal_Frame: '&6That block is not allowed'
+  Mob_Spawner: '&6That block is not allowed'
+
+# Patch for the gravity of the armor stand to avoid lag.
+armorstand:
+  settings:
+    betterchairs: false
+    block-stacking: false
+
+
+#Permissions Bypass: hispanarkycore.netherroofbypass
+PatchNetherRoof: true
+
+#Deop opped players when they leave
+DeopOnLeave: false
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#            Dupes
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Made by MrRafter
+# Dupe Made For Hispanarky
+
+modification:
+  dispenser: false
+  dropper: false
+settings:
+  chance: 100
+  cooldown: 1
+
+#FrameDupe
+
+#The probability of the item getting duped once the item frame is hit.
+#100 and above means that every item will get duped. 0 will effectively disable this Module.
+
+#If this is at 100% it will break the economy of your server it is recommended to set it to 50% or less
+probability-percentage: 0
+
+piston-dupe:
+  #Turn this on if you want to enable piston dupe.
+  enabled: false
+  #Amount of shulkers clonated per dupe
+  amount: 3
+  
+salc1-dupe:
+  #Turn this on if you want to enable SalC1 dupe.
+  enabled: false

@@ -1,0 +1,20 @@
+name: HispanarkyCore
+version: 1.0
+main: me.MrRafter.hispanarky.Main
+authors: [ MrRafter ]
+description: Exploit Fixer for Hispanarky
+depend:
+  - ProtocolLib
+commands:
+  hispanarkycore:
+    aliases: [hc]
+  vanish:
+    description: Command to vanish and unvanish yourself.
+    aliases: [v]
+    permission: hispanarkycore.vanish
+    permission-message: You have no permission to do that!
+permissions:
+  hispanarkycore.vanish:
+    description: Allows you to vanish and unvanish yourself.
+  hispanarkycore.netherroofbypass:
+    description: Bypass nether roof restrictions. (if enabled)
